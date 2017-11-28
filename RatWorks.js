@@ -6,7 +6,13 @@ var customComponents = {};
 
 var RatWorks = {};
 RatWorks.registerComponent = function (elementName, templateFunction) {
-	customComponents[elementName.toLowerCase()] = templateFunction;
+	try {
+		customComponents[elementName.toLowerCase()] = templateFunction;
+		console.log(elementName + ' registered successfully');
+	}
+	catch{
+		console.error('problem registering component ' + elementName);
+	}
 }
 
 RatWorks.appendNewComponent = function (elementName, data, jqParent) {
