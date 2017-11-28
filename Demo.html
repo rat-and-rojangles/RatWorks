@@ -7,6 +7,12 @@
 		<meta name="author" content="ratmaster Fischer">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="RatWorks.js"></script>
+		<script>
+			var generateRandomDiv = function (data) {
+				return '<div>' + Math.random().toString() + '</div>';
+			}
+			RatWorks.registerComponent('fakeelement', generateRandomDiv);
+		</script>
 	</head>
 
 	<body>

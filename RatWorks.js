@@ -9,12 +9,6 @@ RatWorks.registerComponent = function (elementName, templateFunction) {
 	customComponents[elementName.toLowerCase()] = templateFunction;
 }
 
-// var generateRandomDiv = function (data) {
-// 	return '<div>' + Math.random().toString() + '</div>';
-// }
-
-// RatWorks.registerComponent('fakeelement', generateRandomDiv);
-
 RatWorks.appendNewComponent = function (elementName, data, jqParent) {
 	jqParent.append($(customComponents[elementName.toLowerCase()](data)));
 }
@@ -28,9 +22,4 @@ var scrub = function (jqElement) {
 
 $(document).ready(function () {
 	scrub();
-	// $(document).on('keypress', function (e) {
-	// 	if (e.which == 32) {
-	// 		RatWorks.appendNewComponent('fakeelement', {}, $('body'));
-	// 	}
-	// });
 });
