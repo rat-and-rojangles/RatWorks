@@ -10,7 +10,9 @@ RatWorks.registerComponent = function (elementName, templateFunction) {
 }
 
 RatWorks.appendNewComponent = function (elementName, data, jqParent) {
-	jqParent.append($(customComponents[elementName.toLowerCase()](data)));
+	var newJQ = $(customComponents[elementName.toLowerCase()](data));
+	jqParent.append(newJQ);
+	return newJQ;
 }
 
 var scrub = function (jqElement) {
