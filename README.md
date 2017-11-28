@@ -51,4 +51,3 @@ RatWorks.registerComponent('fakeelement', randomDivWithMessage);
 ## Notes
  * You can nest components. Dont forget the .rat-component tho
  * Try to make your components just one element. You can wrap everything in one div if you need to.
- * real ones don't use this piece of crap
