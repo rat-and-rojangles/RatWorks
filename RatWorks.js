@@ -7,7 +7,6 @@ var customComponents = {};
 var RatWorks = {};
 RatWorks.registerComponent = function (elementName, templateFunction) {
 	customComponents[elementName.toLowerCase()] = templateFunction;
-	alert('added');
 }
 
 RatWorks.appendNewComponent = function (elementName, data, jqParent) {
