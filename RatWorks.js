@@ -1,28 +1,44 @@
 // custom defined elements will go here. 
 var customComponents = {};
+// keys: element names
+// values: html functions (data)
 
-// users add their custom shit here somewhere down the line
 
 var RatWorks = {};
-RatWorks.registerComponent = function (elementName, createHTML_function) {
-	customComponents[elementName.toLowerCase()] = createHTML_function;
+RatWorks.registerComponent = function (elementName, templateFunction) {
+	customComponents[elementName.toLowerCase()] = templateFunction;
 }
+// RatWorks.createComponentJQuery = function (elementName, data) {
+// 	var innerJQ = $(customComponents[elementName.toLowerCase()](data));
+// 	var outerJQ = $('<div></div>');
 
-var generateRandomDiv = function (data) {
-	return '<div>' + Math.random().toString() + JSON.stringify(data) + '</div>'
-}
-var generateNester = function (data) {
-	return '<b><fakeelement class="rat-component"></fakeelement></b>'
-}
+// 	outerJQ.append(innerJQ);
+// 	scrub(innerJQ);
+// 	return outerJQ;
+// }
+// RatWorks.createComponentDOM = function (elementName, data) {
+// 	return createComponentJQuery(elementName, data)[0];
+// }
 
-RatWorks.registerComponent('nester', generateNester);
-RatWorks.registerComponent('fakeelement', generateRandomDiv);
+// var generateRandomDiv = function (data) {
+// 	return '<div>' + Math.random().toString() + '</div>';
+// }
 
+// RatWorks.registerComponent('fakeelement', generateRandomDiv);
 
-$(document).ready(function () {
-	while ($('.rat-component').length > 0) {
-		let currentJQElement = $($('.rat-component')[0]);
-		console.log(currentJQElement);
+var scrub = function (jqElement) {
+	var ratList = jqElement.find('.rat-component');
+	while (ratList.length > 0) {
+		let currentJQElement = $(ratList[0]);
 		currentJQElement.prop('outerHTML', customComponents[currentJQElement.prop('tagName').toLowerCase()](currentJQElement.data()));
 	}
+}
+
+$(document).ready(function () {
+	scrub($('body'));
+	$(document).on('keypress', function (e) {
+		if (e.which == 32) {
+			$('body').append(createComponentJQuery('fakeelement'));
+		}
+	});
 });
