@@ -18,7 +18,9 @@ function that returns an HTML string. This will become the outer HTML of the com
    * **data:** associative array of all data-* attributes on the outer tag. All values are strings.
 
 `RatWorks.appendNewComponent (elementName, data, jqParent)`
+
 This is the only way to add new custom components to the DOM.
+Returns the jQuery element created.
  * **elementName:**
 name of the custom component you want to create (must be registered)
  * **data:**
