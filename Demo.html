@@ -12,6 +12,13 @@
 				return '<div>' + Math.random().toString() + '</div>';
 			}
 			RatWorks.registerComponent('fakeelement', generateRandomDiv);
+			$(document).ready(function () {
+				$(document).on('keypress', function (e) {
+					if (e.which == 32) {
+						RatWorks.appendNewComponent('fakeelement', {}, $('#tester'));
+					}
+				});
+			});
 		</script>
 	</head>
 
