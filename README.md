@@ -41,8 +41,8 @@ RatWorks.registerComponent('fakeelement', randomDivWithMessage);
 **HTML**
 
 ```html
-<fakeelement class="rat-component" data-message="hello"></fakeelement>
-<fakeelement class="rat-component" data-message="world!"></fakeelement>
+<fakeelement data-message="hello"></fakeelement>
+<fakeelement data-message="world!"></fakeelement>
 ```
 
 **Result**
