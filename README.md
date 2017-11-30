@@ -10,7 +10,6 @@ Import jQuery then import https://rawgit.com/ratfr0/RatWorks/master/RatWorks.js
 
 `RatWorks.registerComponent (elementName, templateFunction)`
 
-ALL custom components must have the .rat-component class to be properly parsed.
  * **elementName:**
 name of the custom HTML tag will be replaced
  * **templateFunction(data):**
